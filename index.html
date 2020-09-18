@@ -28,30 +28,27 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: OnePage - v2.0.0
-  * Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+
 </head>
+
 
 <body>
 
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top" >
-    <div class="container d-flex align-items-center">
+    <div class="container d-flex align-items-center" id="navdiv">
 
       <h1 class="logo mr-auto"><a href="index.html">safely.ai</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
-      <nav class="nav-menu d-none d-lg-block" >
+      <nav class="nav-menu d-none d-lg-block"s>
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#about">About</a></li>
-					<li><a href="#team">Team</a></li>
-          <li><a href="#services">Models</a></li>
+          <li><a href="#services">Recognition</a></li>
+					<li><a href="#hv">Heavy Vehicle Model</a></li>
+					<li><a href="#pd">Pothole Detector</a></li>
           <li><a href="#contact">Contact</a></li>
 
         </ul>
@@ -147,17 +144,19 @@
 		<section id="about-video" class="about-video">
 			<div class="container" data-aos="fade-up">
 
-				<div class="row">
+				<div class="row" id="hv">
 
 					<div class="col-lg-6 video-box align-self-baseline" data-aos="fade-right" data-aos-delay="100">
 						<img src="assets/img/sample.jpg" class="img-fluid" alt="">
 					</div>
 
 					<div class="col-lg-6 pt-3 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-						<h3>Heavy vehicle detection sample.</h3>
+						<h3>Heavy vehicle detection</h3>
 						<p class="font-italic">
 							Our model has been custom trained using thousands of truck images and is built on the powerful YOLO model that allows for real-time object detection.
 						</p>
+
+
 						<ul>
 							<li><i class="bx bx-check-double"></i> Detect heavy-vehicles in an instant.</li>
 							<li><i class="bx bx-check-double"></i> Get a photo to corroborate the report.</li>
@@ -165,10 +164,21 @@
 							<li><i class="bx bx-check-double"></i> Prevent heavy-vehicle accidents taking place in urban roads.</li>
 						</ul>
 
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+						  Learn more
+						</button>
+
+						<button type="button" class="btn btn-primary" >
+
+							<a style="color:white" href="https://docs.google.com/presentation/d/1GOalFqYjFRvIbleB2anOerfaUNQ77cCBgSihTsr6TGo/edit">Check out our presentation</a>
+						</button>
+
+
 					</div>
 					<br>
 
 				</div>
+				<br>
 				<div class="row">
 
 					<div class="col-lg-6 video-box align-self-baseline" data-aos="fade-right" data-aos-delay="100">
@@ -188,6 +198,7 @@
 					<br>
 
 				</div>
+				<br>
 				<div class="row">
 
 					<div class="col-lg-6 video-box align-self-baseline" data-aos="fade-right" data-aos-delay="100">
@@ -207,69 +218,59 @@
 					<br>
 
 				</div>
+				<br>
 				<div class="row">
 
-					<div class="col-lg-6 video-box align-self-baseline" data-aos="fade-right" data-aos-delay="100">
-						<img src="assets/img/main4.gif" class="img-fluid" alt="">
-					</div>
 
-					<div class="col-lg-6 pt-3 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-						<h3>Sample output</h3>
+
+					<div class="col-lg-6 pt-3 pt-lg-0 content" data-aos="fade-right" data-aos-delay="100" id="pd">
+						<h3>Pothole Detection with TFLite</h3>
 						<p class="font-italic">
-							Check out the sample output from the second video on this list here.
+							We worked on a consumer-facing model ported on mobile devices to help reduce cycling accidents. Our iOS application is designed to detect potholes in real-time when mounted on a cycle with the camera facing the road.
 						</p>
+
+
 						<ul>
-							<li><i class="bx bx-check-double"></i> Specialised web-app to generate reports.</li>
-							<li><i class="bx bx-check-double"></i> Collect data about heavy-vehicles from your network of citywide CCTV cameras.</li>
+							<li><i class="bx bx-check-double"></i> Detect potholes </li>
+							<li><i class="bx bx-check-double"></i> Be warned of approaching dangers on the road.</li>
+							<li><i class="bx bx-check-double"></i> Take approapriate action.</li>
+							<li><i class="bx bx-check-double"></i> Prevent accidents.</li>
 						</ul>
+
+
+						<button type="button" class="btn btn-primary" >
+
+							<a style="color:white" href="https://docs.google.com/forms/d/e/1FAIpQLSdHIlOBRM67rl-ZrrfiU0u3e_XXpVyPXBQOSVWgo2qQ28Ok0g/viewform">Contribute/Beta</a>
+						</button>
+
+
+					</div>
+					<div class="col-lg-6 pt-3 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+						<h3>Technical Details</h3>
+						<p class="font-italic">
+							We use SOTA algorithms of object detection and tracking to complete our software. The SSD MobileNet model is trained for over 30,000 images of 4 types of potholes. We integrated this SSD model into an app and then are in the process of using this app to register potholes for local municipal coporations. The model works with a mAP of 60% and is definitely going to benefit both the government with automatic road analysis and the general public with avoiding accidents.
+
+						 We used the the TF converter to create an edge device compatible model and adapt realtime detections on a phone. The project can help governments significantly reduce accidents and better register pothole data.
+
+
+						</p>
+
 					</div>
 					<br>
 
 				</div>
 
 
+
+
+
 			</div>
 		</section><!-- End About Video Section -->
 
 
-    <!-- ======= About Video Section ======= -->
-		<section id="team" class="team section-bg">
-			<div class="container" data-aos="fade-up">
-
-				<div class="section-title">
-					<h2>Team</h2>
-					<p>Both of us are senior students studying at Jayshree Periwal International School in Jaipur.</p>
-				</div>
-
-				<div class="row">
-
-					<div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-						<div class="member">
-							<div class="member-img">
-								<img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-							</div>
-							<div class="member-info">
-								<h4>Arjun Pandey</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-						<div class="member">
-							<div class="member-img">
-								<img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-							</div>
-							<div class="member-info">
-								<h4>Nirbhay Narang</h4>
-							</div>
-						</div>
-					</div>
 
 
-				</div>
 
-			</div>
-		</section><!-- End Team Section -->
 
     <!-- ======= Clients Section ======= -->
 
@@ -277,53 +278,33 @@
     <section id="services" class="services section-bg">
       <div class="container" data-aos="fade-up">
 
-        <div class="section-title">
-          <h2>Models</h2>
-          <p>Our catalogue of lightweight models have been trained using datasets of 1000s of images and Google's trusted <b> Tensorflow </b>.</p>
+        <div class="section-title" style="text-align:left">
+          <h2>Recognition</h2>
+					<h3>Truck Detection Model</h3>
+          <p> Our team has tirelessly worked in order to get our completed models recognised and implemented in various cities across India. </p>
+					<p> However, due to government privacy concerns, we are not permitted to reveal certain instances of city and state governments using our software </p>
+					<br>
+
+					<button type="button" class="btn btn-primary" >
+						<a style="color:white" href="assets/img/letter.pdf" download>Andaman & Nicobar Islands.</a>
+					</button>
+
+					<br>
+
+					<h3> <br> Pothole Detection App</h3>
+
+					<p> Since this project is still in its beta testing phase, we haven't had the opportunity to pursue recognition.</p>
+					<p>However, as soon as this project is complete and ready for deployment, we have potential partnerships with the Jaipur Traffic Authority as well as several citizen cycling groups lined up. </p>
+
+
+
+
         </div>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="icon-box iconbox-blue">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"></path>
-                </svg>
-                <i class="bx bxl-dribbble"></i>
-              </div>
-              <h4><a href="">Heavy Vehicle Detection</a></h4>
-              <p>With this model, traffic police departments can track trucks illegally entering truck-restricted road networks. Our model will also automatically detect the truck's numberplate and store it in a secure database.</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="icon-box iconbox-orange ">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,582.0697525312426C382.5290701553225,586.8405444964366,449.9789794690241,525.3245884688669,502.5850820975895,461.55621195738473C556.606425686781,396.0723002908107,615.8543463187945,314.28637112970534,586.6730223649479,234.56875336149918C558.9533121215079,158.8439757836574,454.9685369536778,164.00468322053177,381.49747125262974,130.76875717737553C312.15926192815925,99.40240125094834,248.97055460311594,18.661163978235184,179.8680185752513,50.54337015887873C110.5421016452524,82.52863877960104,119.82277516462835,180.83849132639028,109.12597500060166,256.43424936330496C100.08760227029461,320.3096726198365,92.17705696193138,384.0621239912766,124.79988738764834,439.7174275375508C164.83382741302287,508.01625554203684,220.96474134820875,577.5009287672846,300,582.0697525312426"></path>
-                </svg>
-                <i class="bx bx-file"></i>
-              </div>
-              <h4><a href="">Stolen cars</a></h4>
-              <p>With this model, traffic police departments can automate the checking of car number plates against a database of stolen number plates.</p>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
-            <div class="icon-box iconbox-pink">
-              <div class="icon">
-                <svg width="100" height="100" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
-                  <path stroke="none" stroke-width="0" fill="#f5f5f5" d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"></path>
-                </svg>
-                <i class="bx bx-tachometer"></i>
-              </div>
-              <h4><a href="">Pothole Detection</a></h4>
-              <p>Our application-based downloadable model will allows cyclists/bikers to fasten their phones on their vehicles and allow them to navigate streets aand avoid potholes in advance.</p>
-            </div>
-          </div>
-        </div>
 
-      </div>
+
     </section><!-- End Sevices Section -->
 
 
@@ -368,7 +349,26 @@
 
       </div>
     </section><!-- End Contact Section -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLabel">Heavy Vehicle Detection Model</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<p> We use SOTA algorithms of object detection and tracking to complete our software. The YOLOv4 model was re-trained with the COCO dataset and an online Indian traffic dataset to generalise detection to the Indian traffic realm. The model is combined with tracking technologies of DeepSORT to ensure no one vehcile is detected 129081290382 of times.
 
+						<br> <br> We have adjusted our model thresholds to detect more false positives rather than avoiding them because no fugitive should get away. Once a truck is detected, 3 photos of the truck in motion are clicked which is then used to create a web-app report using Streamlit. We also run the image sthrough our ANPR API to ensure no avenues are left unchecked </p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
